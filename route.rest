@@ -1,0 +1,74 @@
+Get http://localhost:8081/users
+
+###
+
+GET http://localhost:8081/users/5db91d9cd249a80575a6fa76
+
+
+###
+
+GET http://localhost:8081/users/5db132376917b612eed18ae1
+
+
+###
+
+@authToken = {{}}
+
+POST http://localhost:8081/user
+Authorization: {{authToken}}
+Content-Type: application/json
+
+{
+    "email": "diego@csumb.edu",
+    "name": "diego",
+    "trainingComplete": false
+}
+
+
+###
+
+POST http://localhost:8081/user
+Authorization: {{authToken}}
+Content-Type: application/json
+
+{
+    "email": "dany@csumb.edu",
+    "password": "hello",
+    "name": "dany",
+    "trainingComplete": true
+}
+
+###
+
+POST http://localhost:8081/user
+Authorization: {{authToken}}
+Content-Type: application/json
+
+{
+    "email": "mando@csumb.edu",
+    "password": "hello",
+    "name": "armando",
+    "trainingComplete": true
+}
+
+###
+
+###
+
+@authToken = {{}}
+
+POST http://localhost:8081/user
+Authorization: {{authToken}}
+Content-Type: application/json
+
+{
+    "email": "manny@csumb.edu",
+    "name": "manny",
+    "trainingComplete": false
+}
+
+DELETE http://localhost:8081/user/5db1e2a3e9d1781f4b1a33c8
+
+
+###
+
