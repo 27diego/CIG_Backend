@@ -7,10 +7,9 @@ const mongoose = require("mongoose"); //connecting to mongodb
 const bodyParser = require("body-parser"); //request body json parser
 const cors = require("cors"); //what domains can access server
 const bcrypt = require("bcryptjs"); //for hashing passwords
-const multer = require("multer");
+const multer = require("multer"); //??
 const fs = require("fs");
-const path = require("path");
-const zipper = require("zip-local");
+const zipper = require("zip-local"); // to zip files
 
 //controllers
 const user = require("./controllers/user");
@@ -22,6 +21,7 @@ const auth = require("./middleware/authorization");
 
 // const db = require("./config/keys").mongoURI;
 const db = "mongodb://mongo:27017/docker-node-mongo";
+
 mongoose
   .connect(db, { useUnifiedTopology: true, useNewUrlParser: true })
   .then(() => console.log("MongoDB Connected..."))
@@ -104,7 +104,6 @@ server.post("/user/:id/file", upload.single("file"), async (req, res) => {
 });
 
 server.get("/user/:id/file", (req, res) => {
-  console.log("Front hitting back");
   const { id } = req.params;
   const dir = `./uploads/${id}`;
   const name = "zippedFiles";
